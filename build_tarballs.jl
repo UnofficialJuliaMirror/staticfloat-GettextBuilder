@@ -25,8 +25,9 @@ platforms = [
     BinaryProvider.Linux(:armv7l, :glibc),
     BinaryProvider.Linux(:powerpc64le, :glibc),
     BinaryProvider.MacOS(),
-    BinaryProvider.Windows(:i686),
-    BinaryProvider.Windows(:x86_64)
+    # Gettext fails on windows when it can't find iconv.h
+    #BinaryProvider.Windows(:i686),
+    #BinaryProvider.Windows(:x86_64)
 ]
 
 # The products that we will ensure are always built
